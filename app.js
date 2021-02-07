@@ -25,6 +25,7 @@ const displayFoods = foods => {
         const foodInfo = `
              <img src="${food.strMealThumb}"/>
              <h3 class="">${food.strMeal}</h3>
+             <button onclick="displayFoodDetails('${food.strMeal}')">Details</button>
         `
         foodDiv.innerHTML = foodInfo;
         foodsDiv.appendChild(foodDiv);
@@ -53,5 +54,30 @@ const displayFoods = foods => {
         
     }
     **/
+}
+const displayFoodDetails = food => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => renderFoodInfo(data.meals[0]));
+}
+
+const renderFoodInfo = food => {
+    console.log(food);
+    const foodDiv = document.getElementById('foodDetail');
+    foodDiv.innerHTML = `
+       <img src="${food.strMealThumb}">
+       <h1>${food.strMeal}</h1>
+       <h4>ID: ${food.idMeal}</h4>
+       <p>Area: ${food.strArea}</p>
+       <p>Category: ${food.strCategory}</p>
+       <p>Ingredient: ${food.strIngredient1}</p>
+       <p>Ingredient: ${food.strIngredient2}</p>
+       <p>Ingredient: ${food.strIngredient5}</p>
+       <p>Ingredient: ${food.strIngredient6}</p>
+       <p>Ingredient: ${food.strIngredient7}</p>
+       <p>Tags: ${food.strTags}</p>
+    
+    `
 }
 
