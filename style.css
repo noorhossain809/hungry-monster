@@ -1,0 +1,21 @@
+#foods{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    
+}
+.food{
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+
+}
+.food-name{
+    font-size: 45px;
+    color: magenta;
+}
+#foods img{
+    width: 100%;
+}
