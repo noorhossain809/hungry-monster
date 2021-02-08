@@ -73,6 +73,7 @@ const renderFoodInfo = food => {
        <li>${food.strIngredient6}</li>
        <li>${food.strIngredient7}</li>
        <li>${food.strTags}</li>
+       <li>New Value</li>
     
     `
 }
