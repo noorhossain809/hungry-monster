@@ -1,9 +1,7 @@
 document.getElementById("search-button").addEventListener("click", function(){
     const getFood = document.getElementById("input").value;
-    // const area = document.getElementById('get-food')
-    // area.innerText = getFood
-
     getReport(getFood)
+    
 })
 function getReport(s){
 
@@ -26,12 +24,11 @@ const displayFoods = foods => {
              <img src="${food.strMealThumb}"/>
              <h3 class="">${food.strMeal}</h3>
              <button onclick="displayFoodDetails('${food.strMeal}')">Details</button>
-        `
+            `
         foodDiv.innerHTML = foodInfo;
         foodsDiv.appendChild(foodDiv);
         
     
-        
     });
     /* 
     for (let i = 0; i < foods.length; i++) {
@@ -63,20 +60,19 @@ const displayFoodDetails = food => {
 }
 
 const renderFoodInfo = food => {
-    console.log(food);
     const foodDiv = document.getElementById('foodDetail');
     foodDiv.innerHTML = `
        <img src="${food.strMealThumb}">
        <h1>${food.strMeal}</h1>
-       <h4>ID: ${food.idMeal}</h4>
-       <p>Area: ${food.strArea}</p>
-       <p>Category: ${food.strCategory}</p>
-       <p>Ingredient: ${food.strIngredient1}</p>
-       <p>Ingredient: ${food.strIngredient2}</p>
-       <p>Ingredient: ${food.strIngredient5}</p>
-       <p>Ingredient: ${food.strIngredient6}</p>
-       <p>Ingredient: ${food.strIngredient7}</p>
-       <p>Tags: ${food.strTags}</p>
+       <h3>ID: ${food.idMeal}</h3>
+       <h5>${food.strArea}</h5>
+       <li>${food.strCategory}</li>
+       <li>${food.strIngredient1}</li>
+       <li>${food.strIngredient2}</li>
+       <li>${food.strIngredient5}</li>
+       <li>${food.strIngredient6}</li>
+       <li>${food.strIngredient7}</li>
+       <li>${food.strTags}</li>
     
     `
 }

@@ -3,6 +3,7 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 5px;
     
+    
 }
 .food{
     border: 1px solid goldenrod;
